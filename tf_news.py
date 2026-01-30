@@ -88,16 +88,5 @@ def analyze_prediction(text):
     return prediction, confidence
 
 while True:
-    title = (input("Enter title: "))
-    title_vectorized = vectorizer.transform([title])
-    prediction = model.predict(title_vectorized)
+    analyze_prediction(input("Enter title: "))
 
-    if prediction[0] == 0:
-        print("Prediction: REAL news")
-    else:
-        print("Prediction: FAKE news")
-    z = input("Enter again? y/n")
-    if z == 'y' or 'Y':
-        print("Okay")
-    else:
-        break
